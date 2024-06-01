@@ -230,49 +230,49 @@ const KeyUsage = () => {
             },
             sorter: (a, b) => a.quota - b.quota,
         },
-        {
-            title: '详情',
-            dataIndex: 'content',
-            render: (text, record, index) => {
-                if (record.other === '') {
-                    record.other = '{}';
-                }
-                let other = JSON.parse(record.other);
-                if (other == null) {
-                    return (
-                        <Paragraph
-                            ellipsis={{
-                                rows: 2,
-                                showTooltip: {
-                                    type: 'popover',
-                                },
-                            }}
-                        >
-                            {text}
-                        </Paragraph>
-                    );
-                }
-                let content = renderModelPrice(
-                    record.prompt_tokens,
-                    record.completion_tokens,
-                    other.model_ratio,
-                    other.model_price,
-                    other.completion_ratio,
-                    other.group_ratio,
-                );
-                return (
-                    <Tooltip content={content}>
-                        <Paragraph
-                            ellipsis={{
-                                rows: 2,
-                            }}
-                        >
-                            {text}
-                        </Paragraph>
-                    </Tooltip>
-                );
-            },
-        },
+        // {
+        //     title: '详情',
+        //     dataIndex: 'content',
+        //     render: (text, record, index) => {
+        //         if (record.other === '') {
+        //             record.other = '{}';
+        //         }
+        //         let other = JSON.parse(record.other);
+        //         if (other == null) {
+        //             return (
+        //                 <Paragraph
+        //                     ellipsis={{
+        //                         rows: 2,
+        //                         showTooltip: {
+        //                             type: 'popover',
+        //                         },
+        //                     }}
+        //                 >
+        //                     {text}
+        //                 </Paragraph>
+        //             );
+        //         }
+        //         let content = renderModelPrice(
+        //             record.prompt_tokens,
+        //             record.completion_tokens,
+        //             other.model_ratio,
+        //             other.model_price,
+        //             other.completion_ratio,
+        //             other.group_ratio,
+        //         );
+        //         return (
+        //             <Tooltip content={content}>
+        //                 <Paragraph
+        //                     ellipsis={{
+        //                         rows: 2,
+        //                     }}
+        //                 >
+        //                     {text}
+        //                 </Paragraph>
+        //             </Tooltip>
+        //         );
+        //     },
+        // },
     ];
 
     const copyTokenInfo = (e) => {
